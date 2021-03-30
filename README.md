@@ -1,10 +1,32 @@
-# 🔥 Nikolasmelui Nodejs Boilerplate
+# Bank Application Example with CQRS and Event Sourcing
 
-[Nikolasmelui Nodejs Boilerplate][nikolasmelui-nodejs-boilerplate] powered by [NikolasMelui][nikolasmelui] is a lightweight nodejs boilerplate using [eslint][eslint], [prettier][prettier], [lint-staged][lint-staged], [husky][husky] and [nodemon][nodemon] onboard. Just clone it, `nmp i`, `npm start` and start to create your cool node.js application!
+## Use CQRS and Event Sourcing to Scale Read API
+
+Powered by [NikolasMelui][nikolasmelui] using the [Nikolasmelui Nodejs Boilerplate][nikolasmelui-nodejs-boilerplate] (lightweight nodejs boilerplate using [eslint][eslint], [prettier][prettier], [lint-staged][lint-staged], [husky][husky] and [nodemon][nodemon] onboard). Just clone the project, `nmp i` and `npm start` it!
+
+```bash
++---------------------+    +-------------+    +------------+
+|                     |    |             |    |    Main    |
+|       Client        +--->+  Write API  +--->+  Database  +---+
+|                     |    |             |    |            |   |
+|   Command { ... }   |    +-------------+    +------------+   |
+|                     |                                        |
+|                     |    +-------------+    +------------+   |
+|   Query { ... }     |    |             |    |    Read    |   |
+|                     +--->+  Read API   +--->+  Database  +<--+
+|                     |    |             |    |            |   |
+|                     |    +-------------+    +------------+   |
+|                     |                                        |
+|                     |    +-------------+    +------------+   |
+|                     |    |             |    |    Read    |   |
+|                     +--->+  Read API   +--->+  Database  +<--+
+|                     |    |             |    |            |
++---------------------+    +-------------+    +------------+
+```
 
 ## Node.js ^14 version
 
-The project is stricted by the >=14.5.0 node.js version!
+The project is stricted by the >=14 node.js version!
 
 ## Installation
 
@@ -52,33 +74,11 @@ make <your_command>
 
 The husky and lint-staged will not let you make a mistake, pre-comit and pre-push are always on guard!
 
-## Development
-
-Contribute? Sure!
-This is an opensource project, so all of the contributions are welcome. Make a fork and go!
-
-| Todos       | Status |
-| ----------- | ------ |
-| Nodemon     | +      |
-| Tests       | +      |
-| ESLint      | +      |
-| Lint-staged | +      |
-| Prettier    | +      |
-| Husky       | +      |
-| Logger      | -      |
-| Docker      | -      |
-| CI\CD       | -      |
-| Workers     | -      |
-| WebSockets  | -      |
-| VMContexts  | -      |
-
----
-
 ## License
 
 MIT License
 
-Copyright (c) 2018 NikolasMelui
+Copyright (c) 2021 NikolasMelui
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
