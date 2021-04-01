@@ -1,14 +1,7 @@
 'use strict';
 
-const { Bank } = require('./bank');
-
-class AccountQuery {
-  constructor(account, operation) {
-    this.account = account;
-    this.operation = operation;
-    this.rows = 0;
-  }
-}
+const { Bank } = require('./Bank');
+const { AccountQuery } = require('./AccountQuery');
 
 class BankRead {
   constructor(eventBus) {

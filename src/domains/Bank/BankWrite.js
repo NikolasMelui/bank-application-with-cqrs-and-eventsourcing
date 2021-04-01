@@ -1,14 +1,7 @@
 'use strict';
 
-const { Bank } = require('./bank');
-
-class AccountCommand {
-  constructor(account, operation, amount = 0) {
-    this.account = account;
-    this.operation = operation;
-    this.amount = amount;
-  }
-}
+const { Bank } = require('./Bank');
+const { AccountCommand } = require('./AccountCommand');
 
 class BankWrite {
   constructor(eventBus) {

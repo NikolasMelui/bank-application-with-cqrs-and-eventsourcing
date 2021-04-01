@@ -1,11 +1,6 @@
 'use strict';
 
-class BankAccount {
-  constructor(name) {
-    this.name = name;
-    this.balance = 0;
-  }
-}
+const { BankAccount } = require('./BankAccount');
 
 const operations = {
   Create: (command, bank) => {
@@ -31,11 +26,9 @@ class Bank {
     const account = new BankAccount(name);
     this.accounts.set(name, account);
   }
-
   find(name) {
     return this.accounts.get(name);
   }
-
   execute(command) {
     const operation = operations[command.operation];
     operation(command, this);
