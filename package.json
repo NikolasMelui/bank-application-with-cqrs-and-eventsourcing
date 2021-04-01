@@ -1,8 +1,8 @@
 {
   "name": "bank-application-with-cqrs-and-eventsourcing",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
-  "description": "Use CQRS and Event Sourcing to Scale Read API",
+  "description": "Use CQRS and Event Sourcing to scale Read API",
   "author": {
     "name": "nikolasmelui",
     "email": "slak@samaradom.ru",
